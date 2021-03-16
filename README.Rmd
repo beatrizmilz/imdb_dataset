@@ -1,0 +1,49 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# imdb_dataset
+
+Objetivo: criar um dataset atualizado para os dados usados no curso "R para Ciência de Dados I".
+
+Dados obtidos no [kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset), em 16 de março de 2021.
+
+Mimetizar a base utilizada no curso: 
+
+```{r message=FALSE, warning=FALSE}
+imdb_curso_R <- readr::read_csv("https://raw.githubusercontent.com/curso-r/main-r4ds-1/master/dados/imdb.csv") 
+```
+
+```{r}
+dplyr::glimpse(imdb_curso_R)
+```
+
+Base como está agora:
+
+```{r message=FALSE, warning=FALSE}
+imdb_filmes <- readr::read_csv2("data-output/imdb.csv") 
+```
+
+```{r}
+dplyr::glimpse(imdb_filmes)
+```
+
+## Anotações
+- Não encontrei ainda: cor, classificacao, likes_facebook.
+Cor e classificação usamos em aula então é legal ter!
+
+- Tamanho das bases:
+  - original imdb - 85 mil filmes
+  - usada nas aulas da curso-R - 3.7 mil filmes
+  - base filtrada aqui - 28.5 mil filmes
+
+- Creio que fizeram mais filtros, alguém sabe quais foram?
